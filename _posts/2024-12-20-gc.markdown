@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "Neural Granger Causality for Multivariate Time Series"
+date:   2024-08-28 22:21:59 +00:00
+image: images/gc.webp
+categories: research
+author: "Harsh Poonia"
+authors: "Guide: Prof. Devendra Singh Dhami"
+venue: "TU Eindhoven and Hessian Center for AI"
+---
+Working on a novel method for predicting sparse granger causal relations between a set of time series variables.

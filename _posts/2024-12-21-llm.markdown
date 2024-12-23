@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "In-Context Learning in LLMs for Text-to-SQL"
+date:   2024-08-28 22:21:59 +00:00
+image: images/llm.webp
+categories: research
+author: "Harsh Poonia"
+authors: "Guide: Prof. Sunita Sarawagi"
+venue: "Research and Development Project"
+report: https://drive.google.com/file/d/1BQwiCl0reJKDo9HOd-Kposh2c5kj7q7z/view?usp=drive_link
+---
+In collaboration with Amazon, I worked on a project to explore the theoretical underpinnings of the in-context learning capability of LLMs, and to better leverage it for something that can aid fast, natural language based retrieval in databases: the domain of Text-to-SQL models. Our approach combined constrained decoding with question decomposition to answer queries represented by sub-trees of the syntax tree of a complex query. We were able to reduce schema hallucinations and improve coherence of generated SQL through this bottom-up approach.

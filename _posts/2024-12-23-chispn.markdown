@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "chiSPN: Characteristic Interventional Sum-Product Networks for Causal Inference in Hybrid Domains"
+date:   2024-08-28 22:21:59 +00:00
+image: images/chispn.webp
+categories: research
+author: "Harsh Poonia"
+authors: "<strong>Harsh Poonia</strong>, Moritz Willig, Zhongjie Yu, Matej Zečević, Kristian Kersting, Devendra Singh Dhami"
+venue: "Uncertainty in Artificial Intelligence (UAI)"
+arxiv: https://arxiv.org/abs/2408.07545
+code: https://github.com/harpoonix/chi-SPN
+---
+We compute post-intervention likelihoods based on true causal relationships between variables. We developed a novel tractable probabilistic circuit, that enabled causal inference for hybrid domains, that is, on systems with both discrete and continuous random variables. By using characteristic functions to represent distributions, we were able to better model asymmetric and long-tailed distributions, which are especially prevalent in real-world datasets.

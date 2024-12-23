@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="icon" href="flower-icon.svg"/>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic"
+        rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css">
+
+    <title>{{ site.name }}</title>
+    <!-- MathJax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+
+        </script>
+    <!-- End MathJax -->
+</head>
+
+<body>
+    <div id="main-container">
+        <div id="layout-content">
+            <!-- nomenu  -->
+            <div id="toptitle">
+                <h1>{{ site.name }}</h1>
+            </div>
+            <div id="text-img-container">
+                <div id="img-container">
+                    <img src="{{site.avatar}}" alt="" width="240px" style="border-radius: 10%;" />
+                    <p style="text-align:center; font-size: 26px;">
+                        <a href="mailto:{{site.footer-links.email}}" target=&ldquo;blank&rdquo;><ion-icon name="mail"></ion-icon></a>
+                        &nbsp;
+                        <a href="pdfs/harsh-poonia-cv.pdf" target=&ldquo;blank&rdquo;>CV</a>
+                        &nbsp;
+                        <a href="https://scholar.google.com/citations?user=mJgY9q4AAAAJ&amp;hl=en&amp;authuser=3"
+                            target=&ldquo;blank&rdquo;><ion-icon name="school"></ion-icon></a>
+                        &nbsp;
+                        <a href="https://github.com/{{site.footer-links.github}}/" target=&ldquo;blank&rdquo;><ion-icon name="logo-github"></ion-icon></a>
+                        &nbsp;
+                        <a href="https://www.linkedin.com/{{site.footer-links.linkedin}}" target=&ldquo;blank&rdquo;><ion-icon name="logo-linkedin"></ion-icon></a>
+                    </p>
+                    <p style="text-align:center; max-width: 240px; margin: 0 auto; padding-bottom:20px;">Please feel free to reach out on my email, I'm always up for a chat!</p>
+                </div>
+                <div id="text-container">
+                    <p>
+                    I am a fourth year undergraduate student at the <a href="https://www.iitb.ac.in" target="_blank">Indian
+                        Institute of Technology Bombay</a>, where I am majoring in <a
+                        href="https://www.cse.iitb.ac.in" target="_blank">Computer Science and Engineering</a> with honors.
+                    </p>
+                    <p>
+                        My research interests lie broadly in machine learning and natural language processing, with a focus on generalizability and fairness. More specifically, I am interested in Large Language Models, Causal Machine Learning, Speech Recognition, and Interpretability in Sequence Models. 
+                    </p>
+                    
+                    <p>I have been fortunate to be advised by <a href="https://sites.google.com/view/devendradhami" target="_blank">Prof. Devendra Singh Dhami</a> at <a href="https://www.tue.nl/en/" target="_blank">TU Eindhoven</a> and <a href="https://hessian.ai/" target="_blank">Hessian Center for AI</a> on my research around causal machine learning. I worked with him on a novel tractable probabilistic circuit that enabled causal inference in hybrid domains, as real world datasets commonly have both discrete and continuous random variables (published at <a href="https://www.auai.org/uai2024/" target="_blank">UAI 2024</a>). I am now working with him on neural granger causality in the context of multivariate time series data. At IIT Bombay, I have the privilege of working with <a href="https://www.cse.iitb.ac.in/~pjyothi/" target="_blank">Prof. Preethi Jyothi</a> for my bachelor's thesis. We aim to compute invariant and equivariant representations of speech, to improve recognition performance for non-native speakers. I have also worked with <a href="https://www.cse.iitb.ac.in/~sunita/" target="_blank">Prof. Sunita Sarawagi</a> on leveraging the in-context learning ability of LLMs for few-shot learning in Text-to-SQL tasks.
+                    </p>
+                    <p>
+                        In my spare time, I love to play all kinds of sports: football, basketball, badminton, and table tennis being my favorites. I also love to <a href="https://www.cse.iitb.ac.in/csea/bitstream/2024/" target="_blank">write</a>, and I sketch sometimes.
+                    </p>
+                </div>
+            </div>
+            <h2>Research</h2>
+            {% for post in site.posts %}
+            {% for cat in post.categories %}
+            {% if cat == 'research' %}
+            <div id="text-img-container">
+                <div id="img-container">
+                    <img src="{{post.image}}" alt="" width="190px" />
+                </div>
+                <div id="text-container">
+                    <h3>{{post.title}}</h3>
+                    <br>
+                    {{post.authors}}
+
+                    <br>
+                    <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
+                    <br>
+                    {% if post.arxiv %}
+                    <a href="{{post.arxiv}}">arxiv</a> /
+                    {% endif %}
+                    {% if post.report %}
+                    <a href="{{post.report}}">report</a> /
+                    {% endif %}
+                    {% if post.video %}
+                    <a href="{{post.video}}">video</a> /
+                    {% endif %}
+                    {% if post.code %}
+                    <a href="{{post.code}}">code</a> /
+                    {% endif %}
+                    {% if post.poster %}
+                    <a href="{{post.poster}}">poster</a> /
+                    {% endif %}
+                    {% if post.slides %}
+                    <a href="{{post.slides}}">slides</a> /
+                    {% endif %}
+                    {% if post.website %}
+                    <a href="{{post.website}}">website</a> /
+                    {% endif %}
+                    {% if post.youtube %}
+                    <a href="{{post.youtube}}">youtube</a> /
+                    {% endif %}
+                    <p></p>
+                    {{ post.excerpt }}
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+            <!-- <div id="layout-content"> -->
+            <div style="display: flex; justify-content: space-between; padding: 0 20px;">
+                <p style="font-size: small;">
+                    Template: <a href="https://saurabhg.web.illinois.edu/" target="_blank">this</a>, <a href="https://jonbarron.info/" target="_blank">this</a>.
+                </p>
+                <p style="font-size: small;">
+                    Last updated: {{ site.time | date: "%B %d, %Y" }}
+                </p>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
