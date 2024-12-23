@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "In-Context Learning in LLMs for Text-to-SQL"
-date:   2024-08-28 22:21:59 +00:00
+date:   2024-12-24 01:13:59 +05:30
 image: images/llm.webp
 categories: research
 author: "Harsh Poonia"
