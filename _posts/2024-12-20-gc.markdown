@@ -1,11 +1,12 @@
 ---
 layout: post
 title:  "Neural Granger Causality for Multivariate Time Series"
-date:   2024-12-24 01:13:59 +05:30
+date:   2025-02-11 01:13:59 +05:30
 image: images/gc.webp
 categories: research
 author: "Harsh Poonia"
-authors: "Guide: Prof. Devendra Singh Dhami"
-venue: "TU Eindhoven and Hessian Center for AI"
+authors: "<strong>Harsh Poonia</strong>, Felix Divo, Kristian Kersting, Devendra Singh Dhami"
+venue: "OpenReview"
+arxiv: https://arxiv.org/abs/2502.09981
 ---
-Working on a novel method for predicting sparse granger causal relations between a set of time series variables.
+A novel method for predicting sparse granger causal relations between a set of time series variables, using an xLSTM based architecture and a dynamic lasso penalty for inducing sparsity. <a href="https://en.wikipedia.org/wiki/Sepp_Hochreiter#Long_short-term_memory_(LSTM)"> Sepp Hochreiter </a> <a href="https://x.com/HochreiterSepp/status/1891371016846196745" target="_blank"> recognised </a> our work!
