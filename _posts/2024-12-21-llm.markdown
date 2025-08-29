@@ -3,7 +3,7 @@ layout: post
 title:  "In-Context Learning in LLMs for Text-to-SQL"
 date:   2024-12-24 01:13:59 +05:30
 image: images/llm.webp
-categories: research
+categories: research project
 author: "Harsh Poonia"
 authors: "Guide: Prof. Sunita Sarawagi"
 venue: "Research and Development Project"

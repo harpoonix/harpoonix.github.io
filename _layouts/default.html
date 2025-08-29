@@ -39,7 +39,7 @@ MathJax.Hub.Config({
                     <p style="text-align:center; font-size: 26px;">
                         <a href="mailto:{{site.footer-links.email}}" target=&ldquo;blank&rdquo;><ion-icon name="mail"></ion-icon></a>
                         &nbsp;
-                        <a href="pdfs/harsh-poonia-cv.pdf" target=&ldquo;blank&rdquo;>CV</a>
+                        <a href="pdfs/cmu-resume-harsh-poonia.pdf" target=&ldquo;blank&rdquo;><ion-icon name="document-text"></ion-icon></a>
                         &nbsp;
                         <a href="https://scholar.google.com/citations?user=mJgY9q4AAAAJ&amp;hl=en&amp;authuser=3"
                             target=&ldquo;blank&rdquo;><ion-icon name="school"></ion-icon></a>
@@ -52,25 +52,25 @@ MathJax.Hub.Config({
                 </div>
                 <div id="text-container">
                     <p>
-                    I am a fourth year undergraduate student at the <a href="https://www.iitb.ac.in" target="_blank">Indian
-                        Institute of Technology Bombay</a>, where I am majoring in <a
+                    I am a first-year graduate student at <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>, pursuing my <a href="https://www.ml.cmu.edu/" target="_blank">Master's in Machine Learning</a>. I recently graduated from the <a href="https://www.iitb.ac.in" target="_blank">Indian
+                        Institute of Technology Bombay</a>, where I majored in <a
                         href="https://www.cse.iitb.ac.in" target="_blank">Computer Science and Engineering</a> with honors.
                     </p>
                     <p>
-                        My research interests lie broadly in machine learning and natural language processing, with a focus on generalizability and fairness. More specifically, I am interested in Large Language Models, Causal Machine Learning, Speech Recognition, and Interpretability in Sequence Models. 
+                        My research interests lie broadly in machine learning and natural language processing, with a focus on generalizability and fairness. More specifically, I am interested in Foundation Models, Reinforcement Learning, Efficient Inference, and Interpretability in Sequence Models. 
                     </p>
                     
-                    <p>I have been fortunate to be advised by <a href="https://sites.google.com/view/devendradhami" target="_blank">Prof. Devendra Singh Dhami</a> at <a href="https://www.tue.nl/en/" target="_blank">TU Eindhoven</a> and <a href="https://hessian.ai/" target="_blank">Hessian Center for AI</a> on my research around causal machine learning. I worked with him on a novel tractable probabilistic circuit that enabled causal inference in hybrid domains, as real world datasets commonly have both discrete and continuous random variables (published at <a href="https://www.auai.org/uai2024/" target="_blank">UAI 2024</a>). I am now working with him on neural granger causality in the context of multivariate time series data. At IIT Bombay, I have the privilege of working with <a href="https://www.cse.iitb.ac.in/~pjyothi/" target="_blank">Prof. Preethi Jyothi</a> for my bachelor's thesis. We aim to compute invariant and equivariant representations of speech, to improve recognition performance for non-native speakers. I have also worked with <a href="https://www.cse.iitb.ac.in/~sunita/" target="_blank">Prof. Sunita Sarawagi</a> on leveraging the in-context learning ability of LLMs for few-shot learning in Text-to-SQL tasks.
+                    <p>I have been fortunate to be advised by <a href="https://sites.google.com/view/devendradhami" target="_blank">Prof. Devendra Singh Dhami</a> at <a href="https://www.tue.nl/en/" target="_blank">TU Eindhoven</a> and <a href="https://hessian.ai/" target="_blank">Hessian Center for AI</a> on my research around causal machine learning. I worked with him on a novel tractable probabilistic circuit that enabled causal inference in hybrid domains, as real world datasets commonly have both discrete and continuous random variables (published at <a href="https://www.auai.org/uai2024/" target="_blank">UAI 2024</a>). More recently, we collaborated on a novel joint optimization scheme for neural granger causality in the context of multivariate time series data. At IIT Bombay, I had the privilege of working with <a href="https://www.cse.iitb.ac.in/~pjyothi/" target="_blank">Prof. Preethi Jyothi</a> for my bachelor's thesis. We researched flow matching and other generative approaches to compute invariant representations of speech, to improve recognition performance for non-native speakers. I have also worked with <a href="https://www.cse.iitb.ac.in/~sunita/" target="_blank">Prof. Sunita Sarawagi</a> on leveraging the in-context learning ability of LLMs for few-shot learning in Text-to-SQL tasks.
                     </p>
                     <p>
                         In my spare time, I love to play all kinds of sports: football, basketball, badminton, and table tennis being my favorites. I also love to <a href="https://www.cse.iitb.ac.in/csea/bitstream/2024/" target="_blank">write</a>, and I sketch sometimes.
                     </p>
                 </div>
             </div>
-            <h2>Research</h2>
+            <h2>Publications</h2>
             {% for post in site.posts %}
             {% for cat in post.categories %}
-            {% if cat == 'research' %}
+            {% if cat == 'published' %}
             <div id="text-img-container">
                 <div id="img-container">
                     <img src="{{post.image}}" alt="" width="190px" />
@@ -114,6 +114,55 @@ MathJax.Hub.Config({
             {% endif %}
             {% endfor %}
             {% endfor %}
+
+            <h2>Research Projects</h2>
+            {% for post in site.posts %}
+            {% for cat in post.categories %}
+            {% if cat == 'project' %}
+            <div id="text-img-container">
+                <div id="img-container">
+                    <img src="{{post.image}}" alt="" width="190px" />
+                </div>
+                <div id="text-container">
+                    <h3>{{post.title}}</h3>
+                    <br>
+                    {{post.authors}}
+
+                    <br>
+                    <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
+                    <br>
+                    {% if post.arxiv %}
+                    <a href="{{post.arxiv}}">arxiv</a> /
+                    {% endif %}
+                    {% if post.report %}
+                    <a href="{{post.report}}">report</a> /
+                    {% endif %}
+                    {% if post.video %}
+                    <a href="{{post.video}}">video</a> /
+                    {% endif %}
+                    {% if post.code %}
+                    <a href="{{post.code}}">code</a> /
+                    {% endif %}
+                    {% if post.poster %}
+                    <a href="{{post.poster}}">poster</a> /
+                    {% endif %}
+                    {% if post.slides %}
+                    <a href="{{post.slides}}">slides</a> /
+                    {% endif %}
+                    {% if post.website %}
+                    <a href="{{post.website}}">website</a> /
+                    {% endif %}
+                    {% if post.youtube %}
+                    <a href="{{post.youtube}}">youtube</a> /
+                    {% endif %}
+                    <p></p>
+                    {{ post.excerpt }}
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+
             <!-- <div id="layout-content"> -->
             <div style="display: flex; justify-content: space-between; padding: 0 20px;">
                 <p style="font-size: small;">
