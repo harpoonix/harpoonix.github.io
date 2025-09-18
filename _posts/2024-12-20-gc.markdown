@@ -6,7 +6,7 @@ image: images/gc.webp
 categories: research published
 author: "Harsh Poonia"
 authors: "<strong>Harsh Poonia</strong>, Felix Divo, Kristian Kersting, Devendra Singh Dhami"
-venue: "OpenReview"
+venue: "Accepted at NeurIPS"
 arxiv: https://arxiv.org/abs/2502.09981
 code: https://github.com/harpoonix/GC-xLSTM
 ---
