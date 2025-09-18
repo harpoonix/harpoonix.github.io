@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Proximal Optimization for Sparse Granger Causality"
-date:   2025-05-22 01:13:59 +05:30
+date:   2025-09-18 01:13:59 +05:30
 image: images/gc.webp
 categories: research published
 author: "Harsh Poonia"
