@@ -6,8 +6,8 @@ image: images/gc.webp
 categories: research published
 author: "Harsh Poonia"
 authors: "<strong>Harsh Poonia</strong>, Felix Divo, Kristian Kersting, Devendra Singh Dhami"
-venue: "Accepted at NeurIPS"
+venue: "NeurIPS"
 arxiv: https://arxiv.org/abs/2502.09981
 code: https://github.com/harpoonix/GC-xLSTM
 ---
-A novel method for predicting sparse granger causal relations between a set of time series variables, using an xLSTM based architecture and a dynamic lasso penalty for inducing sparsity. <a href="https://en.wikipedia.org/wiki/Sepp_Hochreiter#Long_short-term_memory_(LSTM)"> Sepp Hochreiter </a> <a href="https://x.com/HochreiterSepp/status/1891371016846196745" target="_blank"> recognised </a> our work!
+A novel method for predicting sparse granger causal relations between a set of time series variables, using an xLSTM based architecture and a dynamic lasso penalty for inducing sparsity. <a href="https://en.wikipedia.org/wiki/Sepp_Hochreiter#Long_short-term_memory_(LSTM)"> Sepp Hochreiter </a> <a href="https://x.com/HochreiterSepp/status/1891371016846196745" target="_blank" rel="noopener noreferrer"> recognised </a> our work!

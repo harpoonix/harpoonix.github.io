@@ -1,19 +1,30 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <link rel="icon" href="flower-icon.svg"/>
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic"
-        rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
-        type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="color-scheme" content="light dark">
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem('theme');
+                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            } catch (error) {
+                document.documentElement.dataset.theme = 'light';
+            }
+        }());
+    </script>
+    <link rel="icon" href="{{ '/flower-icon.svg' | relative_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+    <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
 
-    <title>{{ site.name }}</title>
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
     <!-- MathJax -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
     <script type="text/x-mathjax-config">
@@ -27,43 +38,45 @@ MathJax.Hub.Config({
 </head>
 
 <body>
-    <div id="main-container">
+    <main id="main-container">
         <div id="layout-content">
             <!-- nomenu  -->
             <div id="toptitle">
                 <h1>{{ site.name }}</h1>
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">
+                    <span class="theme-toggle__icon" aria-hidden="true"></span>
+                </button>
             </div>
-            <div id="text-img-container">
-                <div id="img-container">
-                    <img src="{{site.avatar}}" alt="" width="240px" style="border-radius: 10%;" />
+            <div class="text-img-container profile">
+                <div class="img-container">
+                    <img src="{{ site.avatar | relative_url }}" alt="Portrait of {{ site.name }}" width="240" height="240" style="border-radius: 10%;">
                     <p style="text-align:center; font-size: 26px;">
-                        <a href="mailto:{{site.footer-links.email}}" target=&ldquo;blank&rdquo;><ion-icon name="mail"></ion-icon></a>
-                        &nbsp;
-                        <a href="pdfs/harsh-poonia-resume.pdf" target=&ldquo;blank&rdquo;><ion-icon name="document-text"></ion-icon></a>
+                        <a href="mailto:{{ site.footer-links.email }}" aria-label="Email {{ site.name }}"><ion-icon name="mail"></ion-icon></a>
                         &nbsp;
                         <a href="https://scholar.google.com/citations?user=mJgY9q4AAAAJ&amp;hl=en&amp;authuser=3"
-                            target=&ldquo;blank&rdquo;><ion-icon name="school"></ion-icon></a>
+                            target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile"><ion-icon name="school"></ion-icon></a>
                         &nbsp;
-                        <a href="https://github.com/{{site.footer-links.github}}/" target=&ldquo;blank&rdquo;><ion-icon name="logo-github"></ion-icon></a>
+                        <a href="https://github.com/{{ site.footer-links.github }}/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><ion-icon name="logo-github"></ion-icon></a>
                         &nbsp;
-                        <a href="https://www.linkedin.com/{{site.footer-links.linkedin}}" target=&ldquo;blank&rdquo;><ion-icon name="logo-linkedin"></ion-icon></a>
+                        <a href="https://www.linkedin.com/{{ site.footer-links.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><ion-icon name="logo-linkedin"></ion-icon></a>
                     </p>
                     <p style="text-align:center; max-width: 240px; margin: 0 auto; padding-bottom:20px;">Please feel free to reach out on my email, I'm always up for a chat!</p>
                 </div>
-                <div id="text-container">
+                <div class="text-container">
                     <p>
-                    I am a first-year graduate student at <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>, pursuing my <a href="https://www.ml.cmu.edu/" target="_blank">Master's in Machine Learning</a>. I recently graduated from the <a href="https://www.iitb.ac.in" target="_blank">Indian
-                        Institute of Technology Bombay</a>, where I majored in <a
-                        href="https://www.cse.iitb.ac.in" target="_blank">Computer Science and Engineering</a> with honors.
+                        I am a second-year graduate student at <a href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University</a>, pursuing my <a href="https://www.ml.cmu.edu/" target="_blank" rel="noopener noreferrer">Master's in Machine Learning</a>.
                     </p>
                     <p>
-                        My research interests lie broadly in machine learning and natural language processing, with a focus on generalizability and fairness. More specifically, I am interested in Foundation Models, Reinforcement Learning, Efficient Inference, and Interpretability in Sequence Models. 
-                    </p>
-                    
-                    <p>I have been fortunate to be advised by <a href="https://sites.google.com/view/devendradhami" target="_blank">Prof. Devendra Singh Dhami</a> at <a href="https://www.tue.nl/en/" target="_blank">TU Eindhoven</a> and <a href="https://hessian.ai/" target="_blank">Hessian Center for AI</a> on my research around causal machine learning. I worked with him on a novel tractable probabilistic circuit that enabled causal inference in hybrid domains, as real world datasets commonly have both discrete and continuous random variables (published at <a href="https://www.auai.org/uai2024/" target="_blank">UAI 2024</a>). More recently, we collaborated on a novel joint optimization scheme for neural granger causality in the context of multivariate time series data. At IIT Bombay, I had the privilege of working with <a href="https://www.cse.iitb.ac.in/~pjyothi/" target="_blank">Prof. Preethi Jyothi</a> for my bachelor's thesis. We researched flow matching and other generative approaches to compute invariant representations of speech, to improve recognition performance for non-native speakers. I have also worked with <a href="https://www.cse.iitb.ac.in/~sunita/" target="_blank">Prof. Sunita Sarawagi</a> on leveraging the in-context learning ability of LLMs for few-shot learning in Text-to-SQL tasks.
+                        My research interests lie broadly in the science of foundation model training, understanding RL, and diffusion over sequences. Most recently, I was a Research Scientist Intern at <a href="https://mistral.ai/" target="_blank" rel="noopener noreferrer">Mistral AI</a>, where I worked on the end-to-end RL post-training of code agents, from training environments and reward design to evals.
                     </p>
                     <p>
-                        In my spare time, I love to play all kinds of sports: football, basketball, badminton, and table tennis being my favorites. I also love to <a href="https://www.cse.iitb.ac.in/csea/bitstream/2024/" target="_blank">write</a>, and I sketch sometimes.
+                        At CMU, I have also worked with <a href="https://csd.cs.cmu.edu/people/faculty/max-simchowitz" target="_blank" rel="noopener noreferrer">Prof. Max Simchowitz</a> on understanding gradient dynamics during multi-objective reinforcement learning for robotic policies. Our proposed drop-in intervention mitigates pathologies associated with gradient interference.
+                    </p>
+                    <p>
+                        Previously, I graduated from the <a href="https://www.iitb.ac.in/" target="_blank" rel="noopener noreferrer">Indian Institute of Technology Bombay</a>, where I majored in <a href="https://www.cse.iitb.ac.in/" target="_blank" rel="noopener noreferrer">Computer Science and Engineering</a> with honors. I have been fortunate to be advised by <a href="https://sites.google.com/view/devendradhami" target="_blank" rel="noopener noreferrer">Prof. Devendra Singh Dhami</a> at <a href="https://www.tue.nl/en/" target="_blank" rel="noopener noreferrer">TU Eindhoven</a> and <a href="https://hessian.ai/" target="_blank" rel="noopener noreferrer">Hessian Center for AI</a> on my research around probabilistic circuits and optimization (<a href="https://arxiv.org/abs/2502.09981" target="_blank" rel="noopener noreferrer">NeurIPS '25</a>, <a href="https://proceedings.mlr.press/v244/poonia24a.html" target="_blank" rel="noopener noreferrer">UAI '24</a>). At IIT Bombay, I had the privilege of working with <a href="https://www.cse.iitb.ac.in/~pjyothi/" target="_blank" rel="noopener noreferrer">Prof. Preethi Jyothi</a> for my <a href="https://drive.google.com/file/d/1_tPtLrY7P0-RGlAADEV8SKtDBLcEF-PT/view?usp=sharing" target="_blank" rel="noopener noreferrer">bachelor's thesis</a>. We researched flow matching and other generative approaches to compute invariant representations of speech, to improve recognition performance for non-native speakers.
+                    </p>
+                    <p>
+                        In my spare time, I love to play all kinds of sports: football, basketball, badminton, and table tennis being my favorites. I also love to <a href="https://www.cse.iitb.ac.in/csea/bitstream/2024/" target="_blank" rel="noopener noreferrer">write</a>, and I sketch sometimes.
                     </p>
                 </div>
             </div>
@@ -71,11 +84,11 @@ MathJax.Hub.Config({
             {% for post in site.posts %}
             {% for cat in post.categories %}
             {% if cat == 'published' %}
-            <div id="text-img-container">
-                <div id="img-container">
-                    <img src="{{post.image}}" alt="" width="190px" />
+            <article class="text-img-container publication">
+                <div class="img-container">
+                    <img src="{{ post.image | relative_url }}" alt="Thumbnail for {{ post.title }}" width="190">
                 </div>
-                <div id="text-container">
+                <div class="text-container">
                     <h3>{{post.title}}</h3>
                     <br>
                     {{post.authors}}
@@ -110,72 +123,24 @@ MathJax.Hub.Config({
                     <p></p>
                     {{ post.excerpt }}
                 </div>
-            </div>
+            </article>
             {% endif %}
             {% endfor %}
             {% endfor %}
 
-            <h2>Research Projects</h2>
-            {% for post in site.posts %}
-            {% for cat in post.categories %}
-            {% if cat == 'project' %}
-            <div id="text-img-container">
-                <div id="img-container">
-                    <img src="{{post.image}}" alt="" width="190px" />
-                </div>
-                <div id="text-container">
-                    <h3>{{post.title}}</h3>
-                    <br>
-                    {{post.authors}}
-
-                    <br>
-                    <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
-                    <br>
-                    {% if post.arxiv %}
-                    <a href="{{post.arxiv}}">arxiv</a> /
-                    {% endif %}
-                    {% if post.report %}
-                    <a href="{{post.report}}">report</a> /
-                    {% endif %}
-                    {% if post.video %}
-                    <a href="{{post.video}}">video</a> /
-                    {% endif %}
-                    {% if post.code %}
-                    <a href="{{post.code}}">code</a> /
-                    {% endif %}
-                    {% if post.poster %}
-                    <a href="{{post.poster}}">poster</a> /
-                    {% endif %}
-                    {% if post.slides %}
-                    <a href="{{post.slides}}">slides</a> /
-                    {% endif %}
-                    {% if post.website %}
-                    <a href="{{post.website}}">website</a> /
-                    {% endif %}
-                    {% if post.youtube %}
-                    <a href="{{post.youtube}}">youtube</a> /
-                    {% endif %}
-                    <p></p>
-                    {{ post.excerpt }}
-                </div>
-            </div>
-            {% endif %}
-            {% endfor %}
-            {% endfor %}
-
-            <!-- <div id="layout-content"> -->
-            <div style="display: flex; justify-content: space-between; padding: 0 20px;">
+            <footer class="site-footer">
                 <p style="font-size: small;">
-                    Template: <a href="https://saurabhg.web.illinois.edu/" target="_blank">this</a>, <a href="https://jonbarron.info/" target="_blank">this</a>.
+                    Template: <a href="https://saurabhg.web.illinois.edu/" target="_blank" rel="noopener noreferrer">this</a>, <a href="https://jonbarron.info/" target="_blank" rel="noopener noreferrer">this</a>.
                 </p>
                 <p style="font-size: small;">
                     Last updated: {{ site.time | date: "%B %d, %Y" }}
                 </p>
-            </div>
+            </footer>
         </div>
-    </div>
+    </main>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="{{ '/theme-toggle.js' | relative_url }}"></script>
 </body>
 
 </html>

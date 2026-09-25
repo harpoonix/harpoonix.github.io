@@ -2,16 +2,42 @@
 ---
 /* Default css file for jemdoc. */
 
+:root {
+	color-scheme: light;
+	--background: #ffffff;
+	--surface: #f6f8fa;
+	--code-background: #f3f5f7;
+	--text: #1f2328;
+	--border: #e1e4e8;
+	--link: #2563eb;
+	--link-hover: #1d4ed8;
+	--button-hover: #eceff2;
+}
+
+:root[data-theme='dark'] {
+	color-scheme: dark;
+	--background: #111418;
+	--surface: #191d22;
+	--code-background: #20252b;
+	--text: #e6edf3;
+	--border: #30363d;
+	--link: #60a5fa;
+	--link-hover: #93c5fd;
+	--button-hover: #252b32;
+}
+
 body {
 	font-family: 'Lato', Verdana, Helvetica, sans-serif;
 	padding: 0;
 	margin: 0;
+	background: var(--background);
+	color: var(--text);
 }
 
 
-div#main-container {
+#main-container {
 	min-height: 100vh;
-	background: white;
+	background: var(--background);
 	margin: auto;
 }
 
@@ -82,8 +108,8 @@ div#layout-menu {
 	min-width: 280px;
 	position: fixed;
 	overflow: scroll;
-	background: #f6f8fa;
-	border-right: 0.8px solid #e1e4e8;
+	background: var(--surface);
+	border-right: 0.8px solid var(--border);
 }
 
 #layout-menu a {
@@ -114,8 +140,8 @@ div#layout-content{
 
 
 tt {
-	background: #f3f5f7;
-	color: black;
+	background: var(--code-background);
+	color: var(--text);
 }
 
 pre, tt {
@@ -130,13 +156,13 @@ pre, tt {
 }
 
 a, a > tt {
-  color: #cc0000;
+  color: var(--link);
   text-decoration:none;
 }
 
 a:hover, a:hover > tt{
 	/*border-bottom: 1.25px #0366d6 dashed;*/
-  color: #990000;
+  color: var(--link-hover);
   text-decoration:none;
 }
 
@@ -171,9 +197,49 @@ div.menu-item {
 }
 
 div#toptitle {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
 	padding-bottom: 0.2em;
 	margin-bottom: 1.5em;
-	border-bottom: 1px solid #e1e4e8;
+	border-bottom: 1px solid var(--border);
+}
+
+.theme-toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: 0 0 auto;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	border: 1px solid var(--border);
+	border-radius: 999px;
+	background: var(--surface);
+	color: var(--text);
+	font: inherit;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.theme-toggle:hover {
+	background: var(--button-hover);
+}
+
+.theme-toggle:focus-visible {
+	outline: 2px solid var(--link);
+	outline-offset: 2px;
+}
+
+.theme-toggle__icon::before {
+	content: '\263E';
+	font-size: 18px;
+	line-height: 1;
+}
+
+:root[data-theme='dark'] .theme-toggle__icon::before {
+	content: '\2600';
 }
 
 /* Reduce space if we begin the page with a title. */
@@ -201,7 +267,7 @@ h1, h2, h3 {
 	padding-bottom: 0.2em;
 	line-height: 1.25;
 	padding-top: 0.5em;
-	border-bottom: 0.7px solid #e1e4e8;
+	border-bottom: 0.7px solid var(--border);
 	font-weight: 400;
 }
 
@@ -286,7 +352,7 @@ dl {
 }
 
 dd {
-	color: #222222;
+	color: var(--text);
 }
 
 dd > *:first-child {
@@ -373,7 +439,7 @@ div.infoblock p + p {
 div.codeblock > div.blockcontent {
 	border: none;
 	border-radius: 10px;
-	background: #f6f8fa;
+	background: var(--surface);
 }
 
 span.pycommand {
@@ -446,7 +512,7 @@ td {
 	padding-left: 0.5em;
 	padding-right: 0.5em;
 	text-align: center;
-	border: 1px solid #d1d5da;
+	border: 1px solid var(--border);
 	line-height: 2;
 }
 
@@ -458,64 +524,71 @@ table + table {
     font-weight: 600;
 }
 
-#countries tr:nth-child(even) {background-color: #f6f8fa;}
+#countries tr:nth-child(even) {background-color: var(--surface);}
 
 
 
-div#text-img-container {
+.text-img-container {
 	overflow: hidden;
 	padding: 0;
 	margin: 0;
 	margin-bottom: 20px;
 }
 
-div#img-container {
+.img-container {
 	float: left;
 	padding-top: 0px;
 	text-align: center;
 }
 
-div#text-container {
+.text-container {
 	overflow: hidden;
 	padding-top: 0px;
 	padding-left: 20px;
 }
 
-div#text-container h1{
+.text-container h1{
 	border-bottom: none;
 	margin: 0px;
 	padding: 0px;
 	padding-top: 15px;
 }
 
-div#text-container h2{
+.text-container h2{
 	border-bottom: none;
 	margin: 0px;
 	padding: 0px;
 	padding-top: 15px;
 }
 
-div#text-container h3{
+.text-container h3{
 	padding-top: 10px;
 	margin-top: 0px;
 }
 
-div#text-container h1 + h3{
+.text-container h1 + h3{
 	padding-top: 0px;
 	margin-top: 0px;
 }
 
-div#text-container h3 + h1{
+.text-container h3 + h1{
 	padding: 0px;
 	margin: 0px;
 }
 
-div#text-container h2 + h3{
+.text-container h2 + h3{
 	padding-top: 0px;
 	margin-top: 0px;
 }
 
-div#text-container p{
+.text-container p{
+}
+
+.site-footer {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	padding: 0 20px;
 }
 
 
@@ -641,22 +714,33 @@ div#layout-menu-container .closebtn:hover {
 		padding-bottom: 15px;
 	}
 
-	div#img-container {
+	.img-container {
 		float: none;
 		padding-top: 0px;
-		// text-align: center;
-	}
-
-	div#text-container h1{
 		text-align: center;
 	}
 
-	div#text-container h2{
+	.text-container {
+		padding-left: 0;
+	}
+
+	.text-container h1{
 		text-align: center;
 	}
 
-	div#text-container h3{
+	.text-container h2{
 		text-align: center;
+	}
+
+	.text-container h3{
+		text-align: center;
+	}
+
+	.site-footer {
+		align-items: center;
+		flex-direction: column;
+		gap: 0;
+		padding: 0;
 	}
 }
 
